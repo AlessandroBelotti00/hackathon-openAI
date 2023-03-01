@@ -2,7 +2,7 @@ Title: Introduction to Addition
 
 Grade level: 1st grade
 
-Objective: Students will be able to demonstrate an understanding of addition and its properties by solving addition problems with single-digit numbers.
+Objective: Students will be able to demonstrate an understanding of addition and its properties by solving addition problems with single\ndigit numbers.
 
 Materials:
 
