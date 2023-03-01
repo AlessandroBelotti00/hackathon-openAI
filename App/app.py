@@ -1,8 +1,14 @@
+import os
 import streamlit as st
 from openai_utils.openaiAPI import OpenAIAPI
+from dotenv import load_dotenv
+
+load_dotenv()
+OPENAI_KEY_VAR=os.getenv('openai_key')
 
 ## To be done: read from json/csv
 subjects_list = ['English', 'Math', 'Science']
+
 
 st.title("Teacher AI")
 st.markdown(
@@ -28,6 +34,5 @@ text_input = st.text_input(
  #   placeholder=st.session_state.placeholder,
 )
 if text_input:
-    key = "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"
-    oai = OpenAIAPI(key)
+    oai = OpenAIAPI(OPENAI_KEY_VAR)
     st.write("Answer\n", oai.call_API(text_input))
