@@ -2,14 +2,14 @@ import os
 import streamlit as st
 from openai_utils.openaiAPI import OpenAIAPI
 from dotenv import load_dotenv
-from read import read_text
+from read import *
 
 load_dotenv()
-OPENAI_KEY_VAR="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"
+OPENAI_KEY_VAR="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"
 #os.getenv('openai_key')
 
 ## To be done: read from json/csv
-subjects_list = ['English', 'Math', 'Science', 'Art', 'Lesson_Example']
+subjects_list = ['English', 'Math', 'Science', 'Art']
 st.title("Teacher AI")
 st.markdown(
     "This mini-app generates elementary school lessons using OpenAI's GPT-3 based [Davinci model](https://beta.openai.com/docs/models/overview)."
@@ -23,6 +23,10 @@ with col1:
         'Select the subject',
         subjects_list)
 
+    if st.button('Play'):
+        st.write("bottono premuto, pre stopSpeach")
+        stopSpeach()
+
     path = "../Example/" + option.lower() + "syllabus.txt"
     print(path)
     fileObject = open(path, "r")
@@ -35,7 +39,7 @@ with col1:
         oai = OpenAIAPI(OPENAI_KEY_VAR)
         response = oai.call_API("explain me as a teacher in a complete form the concept of "+data[pos+7:new_pos])
         #st.write("EXPLANATION:\n",response)
-        read_text(response)
+        init(response)
         pos = new_pos
 
         
