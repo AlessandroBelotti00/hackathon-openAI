@@ -2,10 +2,10 @@ import os
 import streamlit as st
 from openai_utils.openaiAPI import OpenAIAPI
 from dotenv import load_dotenv
-from api import call_api
+from read import read_text
 
 load_dotenv()
-OPENAI_KEY_VAR="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"
+OPENAI_KEY_VAR="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"
 #os.getenv('openai_key')
 
 ## To be done: read from json/csv
@@ -33,7 +33,9 @@ with col1:
         new_pos = data.find("Week" ,pos+3)
         st.write(data[pos:new_pos])
         oai = OpenAIAPI(OPENAI_KEY_VAR)
-        st.write("EXPLANATION:\n", oai.call_API("explain me as a teacher in a complete form the concept of "+data[pos+7:new_pos]))
+        response = oai.call_API("explain me as a teacher in a complete form the concept of "+data[pos+7:new_pos])
+        #st.write("EXPLANATION:\n",response)
+        read_text(response)
         pos = new_pos
 
         
