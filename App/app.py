@@ -4,11 +4,11 @@ from openai_utils.openaiAPI import OpenAIAPI
 from dotenv import load_dotenv
 from read import *
 import platform
+os.environ["openai_key"] = st.secrets["openai_key"]
 
 load_dotenv()
 OPENAI_KEY_VAR=os.getenv('openai_key')
 
-## To be done: read from json/csv
 subjects_list = ['English', 'Math', 'Science']
 st.title("Teacher AI")
 st.markdown(
@@ -26,9 +26,6 @@ with col1:
         'Select the subject',
         subjects_list)
 
-    #if st.button('Play'):
-     #   st.write("bottono premuto, pre stopSpeach")
-      #  stopSpeach()
     if platform.system()=="Windows":
         path = "../Example/" + option.lower() + "syllabus.txt"
     else:
@@ -47,7 +44,6 @@ with col1:
         st.write(data[pos:new_pos])
         oai = OpenAIAPI(OPENAI_KEY_VAR)
         response = oai.call_API("explain me as a teacher in a complete form the concept of "+data[pos+7:new_pos])
-        #st.write("EXPLANATION:\n",response)
         init(response)
         pos = new_pos
 
