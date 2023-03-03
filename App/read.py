@@ -1,8 +1,13 @@
 import pyttsx3
 #import keyboard
 #import win32clipboard
+<<<<<<< Updated upstream
 #import time
 #import threading
+=======
+import time
+import threading
+>>>>>>> Stashed changes
 import streamlit as st
 
 engine = pyttsx3.init()
