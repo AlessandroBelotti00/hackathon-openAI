@@ -1,7 +1,5 @@
-openai==0.18.1
-streamlit==1.19.0
+openai
+streamlit
 load_dotenv
-pyttsx3==2.90
-keyboard
-threading
-python-dotenv==1.0.0
+pyttsx3
+python-dotenv

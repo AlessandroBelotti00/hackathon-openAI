@@ -1,12 +1,13 @@
 import os
 import streamlit as st
 from openai_utils.openaiAPI import OpenAIAPI
-from dotenv import load_dotenv
+from dotenv import main
 from read import *
 import platform
-os.environ["openai_key"] = st.secrets["openai_key"]
 
-load_dotenv()
+#os.environ["openai_key"] = st.secrets["openai_key"]
+
+main.load_dotenv()
 OPENAI_KEY_VAR=os.getenv('openai_key')
 
 subjects_list = ['English', 'Math', 'Science']
