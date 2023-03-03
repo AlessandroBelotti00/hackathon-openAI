@@ -5,11 +5,10 @@ from dotenv import load_dotenv
 from read import *
 
 load_dotenv()
-OPENAI_KEY_VAR="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"
-#os.getenv('openai_key')
+OPENAI_KEY_VAR=os.getenv('openai_key')
 
 ## To be done: read from json/csv
-subjects_list = ['English', 'Math', 'Science', 'Art']
+subjects_list = ['En    rt']
 st.title("Teacher AI")
 st.markdown(
     "This mini-app generates elementary school lessons using OpenAI's GPT-3 based [Davinci model](https://beta.openai.com/docs/models/overview)."
