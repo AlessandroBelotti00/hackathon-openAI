@@ -3,5 +3,4 @@ streamlit
 load_dotenv
 pyttsx3==2.90
 keyboard
-win32clipboard
 threading

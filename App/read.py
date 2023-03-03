@@ -1,7 +1,5 @@
 import pyttsx3
 import keyboard
-import win32clipboard
-import time
 import threading
 import streamlit as st
 
