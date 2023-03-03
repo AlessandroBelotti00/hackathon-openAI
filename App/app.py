@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 from read import *
 import platform
 
-#os.environ["openai_key"] = st.secrets["openai_key"]
-
 load_dotenv()
 OPENAI_KEY_VAR=os.getenv('openai_key')
 
