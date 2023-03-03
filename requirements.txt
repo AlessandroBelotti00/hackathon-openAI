@@ -3,9 +3,5 @@ streamlit==1.19.0
 load_dotenv
 pyttsx3==2.90
 keyboard
-<<<<<<< Updated upstream
-threading
-=======
 threading
 python-dotenv==1.0.0
->>>>>>> Stashed changes
