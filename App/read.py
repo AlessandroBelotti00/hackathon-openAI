@@ -1,17 +1,12 @@
 import pyttsx3
-import keyboard
+#import keyboard
 import win32clipboard
 import time
 import threading
 import streamlit as st
 
 engine = pyttsx3.init()
-stop_flag = threading.Event()
 
-
-def stopSpeach():
-    stop_flag.set()
-    st.write("dopo set flag")
 
 def init(string):
     # Inizializza l'engine TTS
@@ -22,36 +17,36 @@ def init(string):
     engine.setProperty('rate', 130)
 
     # funzione che esegue la riproduzione della voce
-    def play_voice(string):
+    #def play_voice(string):
         # fai leggere il testo
-        engine.say(string)
+    engine.say(string)
         # avvia la riproduzione del suono
-        engine.runAndWait()
+    engine.runAndWait()
 
     # esegui la riproduzione della voce in un thread separato
-    thread = threading.Thread(target=play_voice, args=(string,))
-    thread.start()
+    #thread = threading.Thread(target=play_voice, args=(string,))
+    #thread.start()
 
     # aspetta l'evento di interruzione
-    while True:
-        if stop_flag.is_set():
-            st.write("dentro stop_flag.is_set()")
+    # while True:
+        #if stop_flag.is_set():
+            #st.write("dentro stop_flag.is_set()")
             # imposta il flag per interrompere la riproduzione
-            stop_flag.clear()
+    # stop_flag.clear()
             # interrompi la riproduzione
-            engine.stop()
-            break
+    # engine.stop()
+    # break
 
     # attendo che il thread termini
-    thread.join()
+    #thread.join()
 
 
 
 
-def onWord(name, location, length):
-    print ('word', name, location, length)
-    if keyboard.is_pressed("esc"):
-       engine.stop()
+#def onWord(name, location, length):
+    #print ('word', name, location, length)
+    # if keyboard.is_pressed("esc"):
+# engine.stop()
 
 
 """ 
