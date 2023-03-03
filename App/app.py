@@ -15,7 +15,10 @@ st.markdown(
 )
 
 col1, col2 = st.columns(2)
-
+with col2:
+    gif_url = 'https://media.giphy.com/media/YT8NIA8fU2pz6Gf2kR/giphy.gif'
+    st.image(gif_url, use_column_width=True)
+    
 with col1:
 
     option = st.selectbox(
@@ -44,6 +47,3 @@ with col1:
         
 
 
-with col2:
-    gif_url = 'https://media.giphy.com/media/YT8NIA8fU2pz6Gf2kR/giphy.gif'
-    st.image(gif_url, use_column_width=True)
